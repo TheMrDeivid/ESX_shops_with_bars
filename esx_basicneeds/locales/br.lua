@@ -1,0 +1,17 @@
+Locales['br'] = {
+	['used_bread'] = 'você comeu ~y~1x~s~ ~b~pão~s~',
+	['used_water'] = 'você tomou ~y~1x~s~ ~b~água~s~',
+	['used_chocolate'] = 'você comeu ~y~1x~s~ ~b~chocolate~s~',
+	['used_sandwich'] = 'você comeu ~y~1x~s~ ~b~sanwdich~s~',
+	['used_hamburger'] = 'você comeu ~y~1x~s~ ~b~hamburger~s~',
+	['used_cupcake'] = 'você comeu ~y~1x~s~ ~b~bolinho~s~',
+	['used_cocacola'] = 'você tomou ~y~1x~s~ ~b~coca-cola~s~',
+	['used_icetea'] = 'você tomou ~y~1x~s~ ~b~ice-tea~s~',
+	['used_coffe'] = 'você tomou ~y~1x~s~ ~b~café~s~',
+	['used_wine'] = 'você tomou ~y~1x~s~ ~y~vinho~s~',
+	['used_beer'] = 'você tomou ~y~1x~s~ ~y~cerveja~s~',
+	['used_vodka'] = 'você tomou ~y~1x~s~ ~y~vodka~s~',
+	['used_tequila'] = 'você tomou ~y~1x~s~ ~y~tequila~s~',
+	['used_whisky'] = 'você tomou ~y~1x~s~ ~y~whisky~s~',
+	['used_milk'] = 'você tomou ~y~1x~s~ ~b~leite~s~',
+}
