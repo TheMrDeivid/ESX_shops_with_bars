@@ -1,5 +1,6 @@
 # esx_basicneeds
 This script implements hunger and thirst status, they can be increased when eating bread or drinking water.
+This is a script made by TheMrDeivid.
 
 ## Requirements
 - [esx_status](https://github.com/ESX-Org/esx_status)
