@@ -10,6 +10,7 @@ Config.Map = {
   {name="Bahamas",color=27, id=93,x =-1388.409, y =-585.624, z =100.319},
   {name="Stripclub",color=27, id=121,x =132.17, y =-1304.42, z =100.319},
   {name="Yellow Jack",color=27, id=93,x =1992.69, y =3058.57, z =100.319},
+  {name="Galaxy",color=27, id=93,x =5.00, y =220.24, z =107.72}, -- Wainting for the nightclub id blip
   {name="Lojas",color=2, id=52,x =373.875, y =325.896, z =100.319},
   {name="Lojas",color=2, id=52,x =2557.458, y =382.282, z =100.319},
   {name="Lojas",color=2, id=52,x =-3038.939, y =585.954, z =6.908},
@@ -77,6 +78,14 @@ Config.Zones = {
             {x = -1393.409, y = -606.624,  z = 29.319}, --Bahamamas
             {x = -559.906,  y = 287.093,   z = 81.176}, --Tequila la
             {x = 1986.18,   y = 3054.31,   z = 46.32}
+        }
+    },
+  
+    Disco = {
+        Items = {beer, wine, vodka, tequila, whisky, cigarett, lighter},
+        Pos = {
+            {x = -1586.922,   y = -3012.860, z = -77.004}, --Upstairs
+			{x = -1578.204,   y = -3014.460, z = -80.005}  --Downstairs
         }
     }
 }
