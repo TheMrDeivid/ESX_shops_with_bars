@@ -85,7 +85,7 @@ Config.Zones = {
         Items = {beer, wine, vodka, tequila, whisky, cigarett, lighter},
         Pos = {
             {x = -1586.922,   y = -3012.860, z = -77.004}, --Upstairs
-			{x = -1578.204,   y = -3014.460, z = -80.005}  --Downstairs
+	    {x = -1578.204,   y = -3014.460, z = -80.005}  --Downstairs
         }
     }
 }
