@@ -116,29 +116,6 @@ Citizen.CreateThread(function()
 
 end)
 
--- R A I N B O W --
-rainbows = true
-
-function RGBRainbow(frequency)
-    local curtime = GetGameTimer() / 1000
-
-    r = math.floor(math.sin(curtime * frequency + 0) * 127 + 128)
-    g = math.floor(math.sin(curtime * frequency + 2) * 127 + 128)
-    b = math.floor(math.sin(curtime * frequency + 4) * 127 + 128)
-
-    return result
-end
-Citizen.CreateThread(function()
-	while true do
-		Wait(1)
-
-		if rainbows then
-			rgb = RGBRainbow(1)
-		end
-	end
-end)
--- R A I N B O W --
-
 -- Display markers
 Citizen.CreateThread(function()
 	while true do
@@ -148,7 +125,7 @@ Citizen.CreateThread(function()
 		for k,v in pairs(Config.Zones) do
 			for i = 1, #v.Pos, 1 do
 				if(Config.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos[i].x, v.Pos[i].y, v.Pos[i].z, true) < Config.DrawDistance) then
-					DrawMarker(Config.Type, v.Pos[i].x, v.Pos[i].y, v.Pos[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, r, g, b, 100, false, true, 2, false, false, false, false)
+					DrawMarker(Config.Type, v.Pos[i].x, v.Pos[i].y, v.Pos[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, false, false, false)
 				end
 			end
 		end
