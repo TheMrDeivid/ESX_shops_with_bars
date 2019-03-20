@@ -35,7 +35,7 @@ Config.Map = {
 Config.Zones = {
 
     TwentyFourSeven = {
-        Items = {bread, chocolate, sandwich, hamburge, cupcake, water, cocacola, icetea, coffe, milk, cigarett, lighter, phone, jumelles},
+        Items = {bread, chocolate, sandwich, hamburge, cupcake,chips, water, cocacola, icetea, coffe, milk, cigarett, lighter},
         Pos = {
             {x = 373.875,   y = 325.896,  z = 102.566},
             {x = 2557.458,  y = 382.282,  z = 107.622},
@@ -49,7 +49,7 @@ Config.Zones = {
     },
 
     RobsLiquor = {
-        Items = {bread, chocolate, sandwich, hamburge, cupcake, water, cocacola, icetea, coffe, milk, cigarett, lighter, phone, jumelles},
+        Items = {bread, chocolate, sandwich, hamburge, cupcake,chips, water, cocacola, icetea, coffe, milk, cigarett, lighter},
         Pos = {
             {x = 1135.808,  y = -982.281,  z = 45.415},
             {x = -1222.915, y = -906.983,  z = 11.326},
@@ -61,7 +61,7 @@ Config.Zones = {
     },
 
     LTDgasoline = {
-        Items = {bread, chocolate, sandwich, hamburge, cupcake, water, cocacola, icetea, coffe, milk, cigarett, lighter, phone, jumelles},
+        Items = {bread, chocolate, sandwich, hamburge, cupcake, chips, water, cocacola, icetea, coffe, milk, cigarett, lighter},
         Pos = {
             {x = -48.519,   y = -1757.514, z = 28.421},
             {x = 1163.373,  y = -323.801,  z = 68.205},
@@ -72,7 +72,7 @@ Config.Zones = {
     },
 
     Bar = {
-        Items = {beer, wine, vodka, tequila, whisky, cigarett, lighter},
+        Items = {beer, wine, vodka, tequila, whisky, gintonic, absinthe ,champagne, cigarett, lighter},
         Pos = {
             {x = 127.830,   y = -1284.796, z = 28.280}, --StripClub
             {x = -1393.409, y = -606.624,  z = 29.319}, --Bahamamas
