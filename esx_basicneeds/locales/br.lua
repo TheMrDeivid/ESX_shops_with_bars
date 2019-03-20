@@ -14,4 +14,7 @@ Locales['br'] = {
 	['used_tequila'] = 'você tomou ~y~1x~s~ ~y~tequila~s~',
 	['used_whisky'] = 'você tomou ~y~1x~s~ ~y~whisky~s~',
 	['used_milk'] = 'você tomou ~y~1x~s~ ~b~leite~s~',
+	['used_gintonic'] = 'você tomou ~y~1x~s~ ~y~Gin Tónico~s~',
+	['used_absinthe'] = 'você tomou ~y~1x~s~ ~y~Absinto~s~',
+	['used_champagne'] = 'você tomou ~y~1x~s~ ~y~Champanhe~s~',
 }
