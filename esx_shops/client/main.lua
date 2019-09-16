@@ -31,8 +31,8 @@ Citizen.CreateThread(function()
 		end
 	end)
 end)
-
-function OpenShopMenu(zone)
+--[[ 
+function OpenShopMenu(zone) -- If you want the ESX_SuperMarket feature let this commented
 	local elements = {}
 	for i=1, #Config.Zones[zone].Items, 1 do
 		local item = Config.Zones[zone].Items[i]
@@ -84,6 +84,40 @@ function OpenShopMenu(zone)
 		CurrentActionMsg  = _U('press_menu')
 		CurrentActionData = {zone = zone}
 	end)
+end
+--]]
+function OpenShopMenu(zone) -- If you don't want the ESX_SuperMarket feature uncomment this entire fuction
+	PlayerData = ESX.GetPlayerData()
+	
+	SendNUIMessage({
+		message		= "show",
+		clear = true
+	})
+	
+	local elements = {}
+	for i=1, #Config.Zones[zone].Items, 1 do
+		local item = Config.Zones[zone].Items[i]
+
+		if item.limit == -1 then
+			item.limit = 100
+		end
+
+		SendNUIMessage({
+			message		= "add",
+			item		= item.item,
+			label      	= item.label,
+			item       	= item.item,
+			price      	= item.price,
+			max        	= item.limit,
+			loc			= zone
+		})
+
+	end
+	
+	ESX.SetTimeout(200, function()
+		SetNuiFocus(true, true)
+	end)
+
 end
 
 AddEventHandler('esx_shops:hasEnteredMarker', function(zone)
@@ -160,8 +194,8 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
-
--- Key Controls
+--[[
+-- Key Controls -- If you want the ESX_SuperMarket let this commented
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
@@ -180,4 +214,49 @@ Citizen.CreateThread(function()
 			Citizen.Wait(500)
 		end
 	end
+end)
+--]]
+-- Key Controls -- If you don't want the ESX_SuperMarket feature uncomment this entire fuction
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(10)
+
+		if CurrentAction ~= nil then
+
+			SetTextComponentFormat('STRING')
+			AddTextComponentString(CurrentActionMsg)
+			DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+
+			if IsControlJustReleased(0, 38) then
+
+				if CurrentAction == 'shop_menu' then
+					OpenShopMenu(CurrentActionData.zone)
+				end
+
+				CurrentAction = nil
+			elseif IsControlJustReleased (0, 44) then
+				ESX.SetTimeout(200, function()
+					SetNuiFocus(false, false)
+				end)	
+			end
+
+		else
+			Citizen.Wait(500)
+		end
+	end
+end)
+
+function closeGui()
+  SetNuiFocus(false, false)
+  SendNUIMessage({message = "hide"})
+end
+
+RegisterNUICallback('quit', function(data, cb)
+  closeGui()
+  cb('ok')
+end)
+
+RegisterNUICallback('purchase', function(data, cb)
+	TriggerServerEvent('esx_shops:buyItem', data.item, data.count, data.loc)
+	cb('ok')
 end)
