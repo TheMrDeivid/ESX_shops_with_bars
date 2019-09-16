@@ -24,11 +24,10 @@ body{
 
 .card {
   /* Add shadows to create the "card" effect */
-  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
-  background-color: rgba(25, 25, 35, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #ffffff1c;
   transition: 0.3s;
   width: 20%;
- /* height: 50%;*/
   margin-left: 1%;
   margin-right: 1%;
   margin-top: 5px;
@@ -180,7 +179,7 @@ input:focus {
 .shop-container {
   width: 50%;
   height: 500px;
-  background-color: rgba(25, 25, 35, 0.5);
+  background-color: #26262b;
   border: 1px solid #1a1c1e;
   border-radius: 1px;
   position: absolute;
