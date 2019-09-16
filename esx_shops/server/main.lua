@@ -1,9 +1,10 @@
 ESX             = nil
 local ShopItems = {}
+local hasSqlRun = false
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
-MySQL.ready(function()
+--[[
+MySQL.ready(function() -- If you want the ESX_SuperMarket feature let this commented
 	MySQL.Async.fetchAll('SELECT * FROM shops LEFT JOIN items ON items.name = shops.item', {}, function(shopResult)
 		for i=1, #shopResult, 1 do
 			if shopResult[i].name then
@@ -29,6 +30,63 @@ MySQL.ready(function()
 end)
 
 ESX.RegisterServerCallback('esx_shops:requestDBItems', function(source, cb)
+	cb(ShopItems)
+end)
+--]]
+-- Load items -- If you don't want the ESX_SuperMarket feature comment this until line 91
+AddEventHandler('onMySQLReady', function()
+	hasSqlRun = true
+	LoadShop()
+end)
+
+-- extremely useful when restarting script mid-game
+Citizen.CreateThread(function()
+	Citizen.Wait(2000) -- hopefully enough for connection to the SQL server
+
+	if not hasSqlRun then
+		LoadShop()
+		hasSqlRun = true
+	end
+end)
+
+function LoadShop()
+	local itemResult = MySQL.Sync.fetchAll('SELECT * FROM items')
+	local shopResult = MySQL.Sync.fetchAll('SELECT * FROM shops')
+
+	local itemInformation = {}
+	for i=1, #itemResult, 1 do
+
+		if itemInformation[itemResult[i].name] == nil then
+			itemInformation[itemResult[i].name] = {}
+		end
+
+		itemInformation[itemResult[i].name].label = itemResult[i].label
+		itemInformation[itemResult[i].name].limit = itemResult[i].limit
+	end
+
+	for i=1, #shopResult, 1 do
+		if ShopItems[shopResult[i].store] == nil then
+			ShopItems[shopResult[i].store] = {}
+		end
+
+		if itemInformation[shopResult[i].item].limit == -1 then
+			itemInformation[shopResult[i].item].limit = 30
+		end
+
+		table.insert(ShopItems[shopResult[i].store], {
+			label = itemInformation[shopResult[i].item].label,
+			item  = shopResult[i].item,
+			price = shopResult[i].price,
+			limit = itemInformation[shopResult[i].item].limit
+		})
+	end
+end
+
+ESX.RegisterServerCallback('esx_shops:requestDBItems', function(source, cb)
+	if not hasSqlRun then
+		TriggerClientEvent('esx:showNotification', source, 'The shop database has not been loaded yet, try again in a few moments.')
+	end
+	
 	cb(ShopItems)
 end)
 

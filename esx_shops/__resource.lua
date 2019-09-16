@@ -2,7 +2,45 @@ resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
 description 'ESX Shops'
 
-version '1.1.5'
+version '1.1.6'
+
+-- If you want to use the ESX_SuperMarket feature let this uncommented
+files {
+	'html/ui.html',
+	'html/styles.css',
+	'html/scripts.js',
+	'html/debounce.min.js',
+	'html/iransans.otf',
+
+	-- default
+	'html/img/default.png',	
+    'html/img/beer.png',
+    'html/img/bread.png',
+    'html/img/cigarett.png',
+    'html/img/cocacola.png',
+    'html/img/coffe.png',
+    'html/img/icetea.png',
+    'html/img/sandwich.png',
+    'html/img/hamburger.png',
+    'html/img/wine.png',
+    'html/img/chocolate.png',
+    'html/img/tequila.png',
+    'html/img/whisky.png',
+    'html/img/milk.png',
+    'html/img/vodka.png',
+    'html/img/water.png',
+    'html/img/cupcake.png',
+    'html/img/lighter.png',
+    'html/img/absinthe.png',
+    'html/img/champagne.png',
+    'html/img/chips.png',
+    'html/img/gintonic.png',
+	'html/img/close.png',
+	'html/img/plus.png',
+	'html/img/minus.png'
+}
+-- If you want to use the ESX_SuperMarket feature let this uncommented
+ui_page 'html/ui.html'
 
 client_scripts {
 	'@es_extended/locale.lua',
