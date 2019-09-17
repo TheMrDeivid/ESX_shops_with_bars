@@ -33,7 +33,7 @@ ESX.RegisterServerCallback('esx_shops:requestDBItems', function(source, cb)
 	cb(ShopItems)
 end)
 --]]
--- Load items -- If you don't want the ESX_SuperMarket feature comment this until line 91
+-- Load items
 AddEventHandler('onMySQLReady', function()
 	hasSqlRun = true
 	LoadShop()
@@ -81,6 +81,10 @@ function LoadShop()
 		})
 	end
 end
+
+--ESX.RegisterServerCallback('esx_shops:requestDBItems', function(source, cb)
+	--cb(ShopItems)
+--end)
 
 ESX.RegisterServerCallback('esx_shops:requestDBItems', function(source, cb)
 	if not hasSqlRun then
