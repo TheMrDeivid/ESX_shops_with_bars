@@ -24,13 +24,17 @@ Citizen.CreateThread(function()
 	end
 
 	Citizen.Wait(5000)
+	PlayerData = ESX.GetPlayerData()
 
 	ESX.TriggerServerCallback('esx_shops:requestDBItems', function(ShopItems)
 		for k,v in pairs(ShopItems) do
-			Config.Zones[k].Items = v
+			if (Config.Zones[k] ~= nil) then
+				Config.Zones[k].Items = v
+			end
 		end
 	end)
 end)
+
 --[[ 
 function OpenShopMenu(zone) -- If you want the ESX_SuperMarket feature let this commented
 	local elements = {}
@@ -170,8 +174,8 @@ end)
 -- Enter / Exit marker events
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
-		local coords      = GetEntityCoords(PlayerPedId())
+		Citizen.Wait(10)
+		local coords      = GetEntityCoords(GetPlayerPed(-1))
 		local isInMarker  = false
 		local currentZone = nil
 
