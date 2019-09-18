@@ -49,7 +49,6 @@ INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 (37, 'LTDgasoline', 'lighter', 10),
 (38, 'TwentyFourSeven', 'cigarett', 15),
 (39, 'TwentyFourSeven', 'lighter', 10),
-(40, 'TwentyFourSeven', 'jumelles', 1000),
 (46, 'Bar', 'beer', 30),
 (47, 'Bar', 'wine', 25),
 (48, 'Bar', 'vodka', 60),
