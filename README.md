@@ -1,5 +1,13 @@
 # ESX_shops_with_bars
 
+## ESX_SuperMarket feature:
+ If you're using this feature you'll have to get your own pictures, you can check the resource.lua for the pictures that're missing!
+ Get the pictures that you want put them into esx_shops/html/img folder and check if it has the same name as in the resource.lua!
+ The name of the pictures need to be the same one as the items name in the database not the label!
+
+### Adding pictures for other items!
+ If you want to add pictures for the missing items you just place the picture in the img folder with the same names as the item in the database, and add the image in the recource.lua file! Restart the server! Done!
+
 ## Download & Installation
 
 ### Using [fvm](https://github.com/qlaffont/fvm-installer)
