@@ -20,5 +20,6 @@ INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
 	('tequila', 'Tequila', 15, 0, 1),
 	('vodka', 'Vodka', 15, 0, 1),
 	('water', 'Água', 15, 0, 1),
-	('whisky', 'Whisky', 15, 0, 1)
+	('whisky', 'Whisky', 15, 0, 1),
+        ('wine', 'Vinho', 15, 0, 1)
 ;
