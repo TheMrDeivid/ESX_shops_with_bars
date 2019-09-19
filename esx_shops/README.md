@@ -1,6 +1,6 @@
 # esx_shops
 
-## ESX_SuperMarket feature:
+## ESX_SuperMarket feature(for this one to work you also need my version of esx_basicneeds, don't worry its updated like the ESX_ORG one, but you need it):
  If you're using this feature you'll have to get your own pictures, you can check the resource.lua for the pictures that're missing!
  Get the pictures that you want put them into esx_shops/html/img folder and check if it has the same name as in the resource.lua!
  The name of the pictures need to be the same one as the items name in the database not the label!
