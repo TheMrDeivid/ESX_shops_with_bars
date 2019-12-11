@@ -41,10 +41,6 @@ function OpenShopMenu(zone) -- If you want the ESX_SuperMarket feature let this 
 	for i=1, #Config.Zones[zone].Items, 1 do
 		local item = Config.Zones[zone].Items[i]
 
-		if item.limit == -1 then
-			item.limit = 100
-		end
-
 		table.insert(elements, {
 			label      = ('%s - <span style="color:green;">%s</span>'):format(item.label, _U('shop_item', ESX.Math.GroupDigits(item.price))),
 			label_real = item.label,
@@ -55,7 +51,7 @@ function OpenShopMenu(zone) -- If you want the ESX_SuperMarket feature let this 
 			value      = 1,
 			type       = 'slider',
 			min        = 1,
-			max        = item.limit
+			max        = 100,
 		})
 	end
 
@@ -102,18 +98,14 @@ function OpenShopMenu(zone) -- If you don't want the ESX_SuperMarket feature com
 	for i=1, #Config.Zones[zone].Items, 1 do
 		local item = Config.Zones[zone].Items[i]
 
-		if item.limit == -1 then
-			item.limit = 100
-		end
-
 		SendNUIMessage({
 			message		= "add",
 			item		= item.item,
 			label      	= item.label,
 			item       	= item.item,
 			price      	= item.price,
-			max        	= item.limit,
-			loc			= zone
+			max        	= item.weight,
+			loc		= zone
 		})
 
 	end
