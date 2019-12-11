@@ -1,6 +1,6 @@
 USE `essentialmode`;
 
-INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('absinthe', 'Absinto', 5, 0, 1),
 	('beer', 'Cerveja', 15, 0, 1),
 	('bread', 'Pão', 15, 0, 1),
