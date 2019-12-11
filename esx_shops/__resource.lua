@@ -2,7 +2,7 @@ resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
 description 'ESX Shops'
 
-version '1.1.6'
+version '1.1.7'
 
 -- If you want to use the ESX_SuperMarket feature let this uncommented
 files {
